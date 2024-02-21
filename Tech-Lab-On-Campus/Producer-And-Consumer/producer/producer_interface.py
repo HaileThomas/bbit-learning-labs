@@ -16,8 +16,11 @@
 class mqProducerInterface:
     def __init__(self, routing_key: str, exchange_name: str) -> None:
         # Save parameters to class variables
+        self.routing_key = routing_key
+        self.exchange_name = exchange_name
 
         # Call setupRMQConnection
+        setupRMQConnection()
         pass
 
     def setupRMQConnection(self) -> None:
@@ -31,4 +34,5 @@ class mqProducerInterface:
 
     def publishOrder(self, message: str) -> None:
         # Basic Publish to Exchange
+        
         pass
